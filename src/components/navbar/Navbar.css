@@ -17,7 +17,15 @@
     padding: 8px !important;
 }
 
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../../assets/CopperplateCC-Heavy.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .navbar-title {
+    font-family: 'CustomFont', sans-serif !important;
     color: var(--text-color) !important;
     margin: 0 auto !important;
     position: absolute !important;

@@ -15,7 +15,6 @@ import HomeIcon from '@mui/icons-material/Home';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter'; // Dumbbell icon
 import FeedbackIcon from '@mui/icons-material/Feedback';
 import InfoIcon from '@mui/icons-material/Info'; // Add this import at the top
-import logo from '../../assets/logo.png'; // Import the logo from assets
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);    
@@ -115,7 +114,7 @@ function Navbar() {
                                     transition: 'opacity 0.3s ease'
                                 }}
                             >
-                                <div className="flex items-center justify-center" style={{ fontFamily: 'Copperplate Gothic, sans-serif' }}>
+                                <div className="flex items-center justify-center">
                                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 
                                          bg-clip-text text-transparent relative">
                                         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" style={{ fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)' }}>
