@@ -155,11 +155,12 @@ const Header = () => {
             window.scrollTo(0, 0);
           }}
           className="bg-gradient-to-r from-blue-600 to-purple-600 text-white 
-                    px-12 py-5 rounded-full text-xl font-semibold transition-all 
-                    duration-300 flex items-center mx-auto shadow-lg 
-                    hover:shadow-xl relative overflow-hidden group"
+                    px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl 
+                    font-semibold transition-all duration-300 flex items-center 
+                    justify-center mx-auto shadow-lg hover:shadow-xl relative 
+                    overflow-hidden group w-full max-w-md"
         >
-          <span className="relative z-10">Transform Your Life Today</span>
+          <span className="relative z-10 whitespace-nowrap">Transform Your Life Today</span>
           <BsArrowRightShort 
             className="ml-2 w-6 h-6 relative z-10 group-hover:translate-x-2 
                       transition-transform" 

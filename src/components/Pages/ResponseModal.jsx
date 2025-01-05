@@ -13,12 +13,12 @@ const ResponseModal = ({ isOpen, onClose, response }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 backdrop-blur-sm mt-16">
-      <div className="relative bg-white p-8 rounded-xl shadow-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full mx-4 pt-16
+      <div className="relative bg-white p-4 sm:p-8 rounded-xl shadow-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full mx-2 sm:mx-4 pt-12 sm:pt-16
         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none]
         border border-gray-100">
         <div className="flex items-center mb-0">
           <div className="flex-grow text-center">
-            <h2 className="text-3xl font-bold text-gray-800">
+            <h2 className="text-xl sm:text-3xl font-bold text-gray-800">
               Your Personalized Plan
             </h2>
           </div>
@@ -30,15 +30,15 @@ const ResponseModal = ({ isOpen, onClose, response }) => {
         <div className="w-32 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
         
 
-        <div className="prose prose-lg prose-blue max-w-none text-left px-4 mt-8">
+        <div className="prose prose-sm sm:prose-lg prose-blue max-w-none text-left px-2 sm:px-4 mt-6 sm:mt-8">
           <ReactMarkdown
             components={{
-              h1: ({node, ...props}) => <h1 className="text-3xl font-bold my-6 text-gray-800 border-b pb-2" {...props} />,
-              h2: ({node, ...props}) => <h2 className="text-2xl font-bold my-4 text-gray-700" {...props} />,
-              h3: ({node, ...props}) => <h3 className="text-xl font-semibold my-3 text-gray-700" {...props} />,
+              h1: ({node, ...props}) => <h1 className="text-2xl sm:text-3xl font-bold my-4 sm:my-6 text-gray-800 border-b pb-2" {...props} />,
+              h2: ({node, ...props}) => <h2 className="text-xl sm:text-2xl font-bold my-3 sm:my-4 text-gray-700" {...props} />,
+              h3: ({node, ...props}) => <h3 className="text-lg sm:text-xl font-semibold my-2 sm:my-3 text-gray-700" {...props} />,
               ul: ({node, ...props}) => <ul className="list-disc pl-6 my-4 space-y-3" {...props} />,
               li: ({node, ...props}) => <li className="text-gray-600 leading-relaxed" {...props} />,
-              p: ({node, ...props}) => <p className="my-4 text-gray-600 leading-relaxed text-lg" {...props} />,
+              p: ({node, ...props}) => <p className="my-3 sm:my-4 text-gray-600 leading-relaxed text-base sm:text-lg" {...props} />,
               strong: ({node, ...props}) => <strong className="font-bold text-gray-800" {...props} />,
               table: ({node, ...props}) => (
                 <div className="overflow-x-auto my-8">

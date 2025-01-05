@@ -74,7 +74,12 @@ function Navbar() {
             </style>
             <AppBar position="fixed" className="navbar">
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <div style={{ 
+                        display: 'flex', 
+                        alignItems: 'center',
+                        gap: '8px',
+                        width: 'auto'
+                    }}>
                         <IconButton 
                             edge="start" 
                             className="navbar-icon"
@@ -92,7 +97,9 @@ function Navbar() {
                                 },
                                 '&:active': {
                                     backgroundColor: 'transparent',
-                                }
+                                },
+                                zIndex: 2,
+                                position: 'relative'
                             }}
                         >
                             <MenuIcon />
@@ -101,26 +108,38 @@ function Navbar() {
                         <Typography 
                             variant="h6" 
                             className="navbar-title"
-                            style={{ fontFamily: 'Poppins, sans-serif' }}
+                            style={{ 
+                                fontFamily: 'Poppins, sans-serif',
+                                width: 'auto'
+                            }}
                         >
                             <Link 
                                 to="/" 
                                 onClick={handleTitleClick}
-                                
                                 style={{ 
                                     textDecoration: 'none', 
                                     color: 'inherit',
                                     opacity: isLoading ? 0.7 : 1,
-                                    transition: 'opacity 0.3s ease'
+                                    transition: 'opacity 0.3s ease',
+                                    display: 'block',
+                                    width: 'auto'
                                 }}
                             >
-                                <div className="flex items-center justify-center">
+                                <div className="flex items-center justify-center" style={{ width: '100%' }}>
                                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 
-                                         bg-clip-text text-transparent relative">
-                                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" style={{ fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)' }}>
+                                         bg-clip-text text-transparent relative" style={{ display: 'inline-block' }}>
+                                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" 
+                                            style={{ 
+                                                fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
+                                                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
+                                            }}>
                                             Synchro
                                         </span>
-                                        <span style={{ color: 'black', fontSize: '2.5rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)' }}>FIT</span>
+                                        <span style={{ 
+                                            color: 'black', 
+                                            fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
+                                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
+                                        }}>FIT</span>
                                     </span>
                                 </div>
                             </Link>

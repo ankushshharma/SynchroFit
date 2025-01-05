@@ -51,39 +51,62 @@ const keyframes = `
       background-position: 0% 50%;
     }
   }
+
+  @keyframes typewriter {
+    from { 
+      width: 0;
+    }
+    to { 
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeInTypewriter {
+    from { 
+      opacity: 0;
+    }
+    to { 
+      opacity: 1;
+    }
+  }
+
+  @keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: var(--text-color); }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
 `;
 
 const FormHeader = () => {
   return (
     <>
       <style>{keyframes}</style>
-      <div className="text-center mb-20 p-8 relative">
-        {/* Main Content */}
+      <div className="text-center mb-10 md:mb-20 p-4 md:p-8 relative">
         <div className="relative z-10">
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
             {/* Icon Container */}
-            <div className="relative">
-              <Target 
-                className="w-12 h-12 transition-all duration-300 ease-in-out hover:scale-110" 
-                style={{
-                  color: '#3b82f6',
-                  filter: 'drop-shadow(0 0 1px rgba(59, 130, 246, 0.1))',
-                  animation: 'float 3s ease-in-out infinite'
-                }}
-              />
-              <div 
-                className="absolute inset-0 opacity-30 rounded-full"
-                style={{
-                  background: '#3b82f6',
-                  filter: 'blur(8px)',
-                  animation: 'pulse 2s infinite'
-                }}
-              />
-            </div>
-
-            {/* Title with enhanced text animation */}
+            {/* Updated title with smaller responsive sizing */}
             <h1 
-              className="text-3xl md:text-4xl font-bold relative transition-all duration-500 py-4"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold relative transition-all duration-500 py-2 md:py-4 whitespace-nowrap w-full"
               style={{
                 color: 'var(--text-color)',
                 textShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -95,7 +118,7 @@ const FormHeader = () => {
                 animationDelay: '0.2s'
               }}
             >
-              With SynchroFit, Create Your Customized Fitness Plan
+              With SynchroFit,<br className="sm:hidden" /> Create Your Customized Plan
             </h1>
           </div>
 
@@ -112,17 +135,31 @@ const FormHeader = () => {
             }}
           />
 
-          {/* Subtitle with letter spacing animation */}
-          <p 
-            className="text-lg md:text-xl transition-all duration-500"
+          {/* Text container */}
+          <div 
+            className="mt-6 font-mono text-sm md:text-base max-w-2xl ml-0"
             style={{
-              animation: 'letterSpacing 1s ease-out forwards',
-              animationDelay: '0.8s',
-              opacity: 0
+              animation: 'fadeInUp 0.5s ease-out forwards',
+              animationDelay: '1.4s',
+              opacity: 0,
+              whiteSpace: 'nowrap'
             }}
           >
-            Fill in your details below to get a personalized workout and nutrition plan within seconds
-          </p>
+            "Fill in your details below to get a personalized plan within seconds"
+          </div>
+          
+          {/* Second text container */}
+          <div 
+            className="mt-4 font-mono text-sm md:text-base max-w-2xl ml-0"
+            style={{
+              animation: 'fadeInUp 0.5s ease-out forwards',
+              animationDelay: '1.6s',
+              opacity: 0,
+              whiteSpace: 'nowrap'
+            }}
+          >
+            "Our AI will analyze your inputs to create the perfect plan for you"
+          </div>
         </div>
       </div>
     </>
