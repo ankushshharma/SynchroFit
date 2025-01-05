@@ -10,6 +10,7 @@ import { LineChart, Users, Lightbulb, Target, Award, Code,Github, Facebook, Inst
 import { Link } from 'react-router-dom';
 import AnimatedStatsSection from './AnimatedStatsSection';
 import ConnectwithUs from './ConnectwithUs';
+import SocialLinks from './SocialLinks';
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -92,7 +93,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <style>
         {`
           /* Removed the zoom animation CSS */
@@ -100,7 +101,7 @@ const AboutUs = () => {
       </style>
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-24">
+      <div className="relative py-24 w-full">
         {/* Keep the same animation structure */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div id="hero" data-animate className={`transform transition-all duration-1000 ${isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
@@ -113,8 +114,8 @@ const AboutUs = () => {
                 
                 {/* Enhanced Section Content */}
                 <div className="relative space-y-12">
-                  <h2 className="text-6xl md:text-7xl font-extrabold text-black mb-8 leading-tight py-4">
-                    Welcome to <span className="bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-transparent" style={{ textShadow: '0px 0px 0px rgba(0, 0, 0, 0.2)' }}>SynchroFit</span>
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-black mb-8 leading-tight py-4">
+                    Welcome to <span className="bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-transparent whitespace-nowrap w-full" style={{ textShadow: '0px 0px 0px rgba(0, 0, 0, 0.2)' }}>SynchroFit</span>
                   </h2>
                   
                   <div className="max-w-6xl mx-auto">
@@ -124,8 +125,7 @@ const AboutUs = () => {
                     </p>
                     
                     {/* Enhanced Feature Pills */}
-                    <div className="flex flex-nowrap justify-center gap-4 mt-12 overflow-x-auto pb-4 px-4 max-w-full 
-                    scrollbar-hide hover:scrollbar-default">
+                    <div className="flex flex-wrap md:flex-nowrap justify-center gap-4 mt-12 overflow-x-auto pb-4 px-4 max-w-full">
                       {[
                         { text: 'AI-Powered', icon: Brain },
                         { text: 'Personalized Plans', icon: Target },
@@ -134,16 +134,16 @@ const AboutUs = () => {
                       ].map((feature, index) => (
                         <div 
                           key={index}
-                          className="group px-6 py-3 bg-white rounded-full text-gray-700 shadow-lg border border-gray-100 
+                          className="group px-4 md:px-6 py-2 md:py-3 bg-white rounded-full text-gray-700 shadow-lg border border-gray-100 
                           flex items-center gap-2 hover:scale-105 hover:shadow-xl transition-all duration-300
-                          animate-fade-in-up"
+                          animate-fade-in-up w-[calc(50%-0.5rem)] md:w-auto"
                           style={{
                             animationDelay: `${index * 200}ms`,
                             minWidth: 'fit-content'
                           }}
                         >
-                          <feature.icon className="w-5 h-5 text-blue-500 group-hover:text-purple-500 transition-colors" />
-                          <span className="font-medium whitespace-nowrap">{feature.text}</span>
+                          <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-blue-500 group-hover:text-purple-500 transition-colors" />
+                          <span className="font-medium whitespace-nowrap text-sm md:text-base">{feature.text}</span>
                         </div>
                       ))}
                     </div>
@@ -159,7 +159,7 @@ const AboutUs = () => {
       <AnimatedStatsSection />
       
        {/* Testimonials Section */}
-       <div className="bg-gray-50 py-24">
+       <div className="bg-gray-50 py-24 w-full rounded-3xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16">
             Key Features
@@ -200,12 +200,8 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </div>
-      
-      {/* Values Section */}
-      <div className="bg-gray-50 py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-black to-black bg-clip-text text-transparent">
             Our Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -231,7 +227,7 @@ const AboutUs = () => {
 
 
       {/* Timeline Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
         <h2 className="text-4xl font-bold text-center mb-16">Our Journey</h2>
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-blue-400" />
@@ -259,8 +255,8 @@ const AboutUs = () => {
 
      
       {/* Modified CTA Section */}
-      <div className="relative bg-gradient-to-r from-purple-600 to-blue-500 py-20 rounded-lg">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative bg-gradient-to-r from-purple-600 to-blue-500 py-20 w-11/12 mx-auto h-full rounded-3xl">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center h-full">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Transform Your Fitness Journey?
           </h2>
@@ -272,52 +268,15 @@ const AboutUs = () => {
               Start Your Journey
             </button>
           </Link>
-          <div className="flex flex-col items-center justify-center gap-6 mt-12">
-            {/* Section Header */}
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-4 px-6 py-3 rounded-full backdrop-blur-sm">
-                <Activity className="w-6 h-6 text-white animate-pulse" />
-                <h3 className="text-xl font-semibold text-white">Connect With Us</h3>
-              </div>
-
-              {/* Social Media Icons - With consistent white hover */}
-              {[
-                { 
-                  icon: <Instagram className="w-7 h-7" />, 
-                  href: "https://instagram.com/ankushshharma",
-                  label: "Instagram"
-                },
-                { 
-                  icon: <Github className="w-7 h-7" />, 
-                  href: "https://github.com/ankushshharma",
-                  label: "Github"
-                },
-                { 
-                  icon: <Linkedin className="w-7 h-7" />, 
-                  href: "https://linkedin.com/in/ankushshharma",
-                  label: "LinkedIn"
-                },
-              ].map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="transform hover:scale-110 transition-all duration-300 
-                    text-white hover:text-white hover:bg-white/20
-                    p-4 rounded-full backdrop-blur-sm
-                    hover:shadow-lg hover:-translate-y-1"
-                >
-                  {social.icon}
-                </a>
-              ))}
-              <Activity className="w-6 h-6 text-white animate-pulse" />
-                
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="flex flex-col items-center justify-center gap-6">
+              <SocialLinks />
             </div>
           </div>
         </div>
       </div>
+
+      
       
     </div>
   );

@@ -258,22 +258,22 @@ Please provide:
   };
 
   return (
-    <div className="form-container max-w-[180rem] mx-auto px-4 py-12 bg-white min-h-screen hide-scrollbar">
+    <div className="form-container max-w-[100rem] mx-auto px-2 sm:px-4 py-6 sm:py-12 bg-white min-h-screen hide-scrollbar">
         <FormHeader/>
-        <form onSubmit={handleSubmit} className="space-y-12" noValidate>
-          <div className="form-section p-8 rounded-xl bg-blue-50/50 dark:bg-blue-900/20 space-y-6 border border-blue-100 dark:border-blue-800">
-            <div className="flex items-center gap-4 mb-8 justify-center">
-              <Dumbbell className="w-8 h-8 text-blue-600" />
-              <h2 className="text-2xl font-semibold text-gray-900">Workout Preferences</h2>
+        <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12" noValidate>
+          <div className="form-section p-4 sm:p-8 rounded-xl bg-blue-50/50 dark:bg-blue-900/20 space-y-4 sm:space-y-6 border border-blue-100 dark:border-blue-800">
+            <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center">
+              <Dumbbell className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Workout Preferences</h2>
             </div>
 
             {/* Days per Week */}
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2 mb-6 uppercase text-lg">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2 mb-4 sm:mb-6 uppercase">
                 DAYS PER WEEK
               </label>
               <span 
-                className="days-badge absolute transform -translate-x-1/2"
+                className="days-badge absolute transform -translate-x-1/2 text-sm sm:text-base"
                 style={{
                   left: `${((formData.workoutDays - 1) / 6) * 100}%`,
                   top: '1rem'
@@ -281,7 +281,7 @@ Please provide:
               >
                 {formData.workoutDays} days
               </span>
-              <div className="mt-8 relative">
+              <div className="mt-6 sm:mt-8 relative">
                 <input
                   type="range"
                   min="1"
@@ -297,14 +297,14 @@ Please provide:
 
             {/* Workout Intensity */ }
             <div className="workout-intensity-container">
-              <h3 className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2 mb-6 uppercase text-lg">
+              <h3 className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2 mb-4 sm:mb-6 uppercase">
                 Workout Intensity
               </h3>
-              <div className="intensity-grid grid grid-cols-3 gap-8">
+              <div className="intensity-grid grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
                 {['light workout', 'moderate workout', 'intense workout'].map((intensity) => (
                   <label 
                     key={intensity} 
-                    className={`intensity-option flex flex-col items-center p-4 rounded-lg border-2 transition-all duration-200 cursor-pointer
+                    className={`intensity-option flex flex-col items-center p-3 sm:p-4 rounded-lg border-2 transition-all duration-200 cursor-pointer
                       ${formData.workoutIntensity === intensity 
                         ? 'selected border-blue-500 bg-blue-50' 
                         : 'border-gray-200 hover:border-blue-300'}`}
@@ -318,12 +318,12 @@ Please provide:
                       className="radio-input hidden"
                     />
                     <div className="intensity-content text-center">
-                      <span className="intensity-icon text-2xl mb-2 block">
-                        {intensity === 'light workout' && <CiDumbbell className="w-6 h-6 mx-auto" />}
-                        {intensity === 'moderate workout' && <BiDumbbell className="w-6 h-6 mx-auto" />}
-                        {intensity === 'intense workout' && <FaDumbbell className="w-6 h-6 mx-auto" />}
+                      <span className="intensity-icon text-xl sm:text-2xl mb-1 sm:mb-2 block">
+                        {intensity === 'light workout' && <CiDumbbell className="w-5 h-5 sm:w-6 sm:h-6 mx-auto" />}
+                        {intensity === 'moderate workout' && <BiDumbbell className="w-5 h-5 sm:w-6 sm:h-6 mx-auto" />}
+                        {intensity === 'intense workout' && <FaDumbbell className="w-5 h-5 sm:w-6 sm:h-6 mx-auto" />}
                       </span>
-                      <span className="intensity-label capitalize text-sm">{intensity}</span>
+                      <span className="intensity-label capitalize text-xs sm:text-sm">{intensity}</span>
                     </div>
                   </label>
                 ))}
@@ -332,14 +332,14 @@ Please provide:
 
             {/* Exercise Types */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                 EXERCISE TYPES
               </label>
               <select
                 name="exerciseTypes"
                 value={formData.exerciseTypes}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -356,21 +356,21 @@ Please provide:
             </div>
           </div>
 
-          <div className="form-section p-8 rounded-xl bg-green-50/50 dark:bg-green-900/20 space-y-6 border border-green-100 dark:border-green-800">
-              <div className="flex items-center gap-4 mb-8 justify-center">
-                <Salad className="w-8 h-8 text-green-600 dark:text-green-400" />
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Diet Preferences</h2>
-              </div>
+          <div className="form-section p-4 sm:p-8 rounded-xl bg-green-50/50 dark:bg-green-900/20 space-y-4 sm:space-y-6 border border-green-100 dark:border-green-800">
+            <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center">
+              <Salad className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 dark:text-green-400" />
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">Diet Preferences</h2>
+            </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+            <div className="space-y-2 sm:space-y-3">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                 DIET TYPE
               </label>
               <select
                 name="dietPreference"
                 value={formData.dietPreference}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -387,15 +387,15 @@ Please provide:
               </select>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+            <div className="space-y-2 sm:space-y-3">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                 DIETARY RESTRICTIONS
               </label>
               <select
                 name="dietaryRestrictions"
                 value={formData.dietaryRestrictions}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -413,15 +413,15 @@ Please provide:
               </select>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+            <div className="space-y-2 sm:space-y-3">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                 FITNESS GOAL
               </label>
               <select
                 name="fitnessGoal"
                 value={formData.fitnessGoal}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -435,15 +435,15 @@ Please provide:
               </select>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
-                Lifestyle
+            <div className="space-y-2 sm:space-y-3">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+                LIFESTYLE
               </label>
               <select
                 name="lifestyle"
                 value={formData.lifestyle}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -459,15 +459,15 @@ Please provide:
             </div>
           </div>
 
-          <div className="form-section p-8 rounded-xl bg-purple-50/50 dark:bg-purple-900/20 space-y-6 border border-purple-100 dark:border-purple-800 hide-scrollbar">
-            <div className="flex items-center gap-4 mb-8 justify-center">
-              <User className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Personal Information</h2>
+          <div className="form-section p-4 sm:p-8 rounded-xl bg-purple-50/50 dark:bg-purple-900/20 space-y-4 sm:space-y-6 border border-purple-100 dark:border-purple-800 hide-scrollbar">
+            <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center">
+              <User className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 dark:text-purple-400" />
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">Personal Information</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+                <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                   AGE
                 </label>
                 <input
@@ -479,8 +479,9 @@ Please provide:
                   min="16"
                   className="
                     w-full 
-                    px-3 
+                    px-2 sm:px-3 
                     py-2 
+                    text-sm sm:text-base
                     border border-gray-300 dark:border-gray-600 
                     rounded-md 
                     focus:outline-none 
@@ -496,14 +497,14 @@ Please provide:
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
-                  Gender
+                <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+                  GENDER
                 </label>
                 <select
                   name="sex"
                   value={formData.sex}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                  className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                            focus:outline-none focus:ring-2 focus:ring-blue-500 
                            bg-transparent dark:bg-gray-700
                            text-gray-900 dark:text-gray-100"
@@ -515,10 +516,10 @@ Please provide:
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+                <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                   HEIGHT (CM) 
-                  <p className={`text-sm text-gray-400 ${formData.height ? 'inline-block' : 'hidden'} ml-4`}>
-                     Height in Feet: {heightInFeet} ft
+                  <p className={`text-xs sm:text-sm text-gray-400 ${formData.height ? 'inline-block' : 'hidden'} ml-2 sm:ml-4`}>
+                    Height in Feet: {heightInFeet} ft
                   </p>
                 </label>
                 <input
@@ -530,8 +531,9 @@ Please provide:
                   min="140"
                   className="
                     w-full 
-                    px-3 
+                    px-2 sm:px-3 
                     py-2 
+                    text-sm sm:text-base
                     border border-gray-300 dark:border-gray-600 
                     rounded-md 
                     focus:outline-none 
@@ -544,11 +546,10 @@ Please provide:
                     [&::-webkit-inner-spin-button]:appearance-none
                   "
                 />
-                
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+                <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                   WEIGHT (KG)
                 </label>
                 <input
@@ -560,8 +561,9 @@ Please provide:
                   min="25"
                   className="
                     w-full 
-                    px-3 
+                    px-2 sm:px-3 
                     py-2 
+                    text-sm sm:text-base
                     border border-gray-300 dark:border-gray-600 
                     rounded-md 
                     focus:outline-none 
@@ -578,7 +580,7 @@ Please provide:
             </div>
 
             <div className="space-y-2 w-full">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
+              <label className="block text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 text-left pl-2">
                 ADDITIONAL NOTES
               </label>
               <textarea
@@ -587,7 +589,7 @@ Please provide:
                 value={formData.otherNotes}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md 
+                className="w-full px-2 sm:px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md 
                          focus:outline-none focus:ring-2 focus:ring-blue-500 
                          bg-transparent dark:bg-gray-700
                          text-gray-900 dark:text-gray-100"
@@ -595,25 +597,25 @@ Please provide:
             </div>
           </div>
 
-          <div className="flex justify-center pt-6">
+          <div className="flex justify-center pt-4 sm:pt-6">
             <button
               type="submit"
               disabled={isLoading || !isFormValid()}
-              className="w-2/3 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 
-                       text-white py-4 px-8 rounded-xl
+              className="w-[90%] sm:w-2/3 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 
+                       text-white py-3 sm:py-4 px-4 sm:px-8 rounded-xl
                        hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-600 dark:hover:to-blue-700
                        transition-all duration-300 transform hover:scale-[1.02]
                        focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800
                        disabled:opacity-50 disabled:hover:scale-100
-                       text-lg font-medium shadow-lg"
+                       text-base sm:text-lg font-medium shadow-lg"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
-                  <CircularProgress size={24} sx={{ color: 'white' }} />
-                  <span className="ml-3">Creating Your Plan...</span>
+                  <CircularProgress size={20} sx={{ color: 'white' }} />
+                  <span className="ml-2 sm:ml-3 text-sm sm:text-base">Creating Your Plan...</span>
                 </div>
               ) : (
-                'Generate Your Personalized Plan'
+                <span className="text-sm sm:text-base">Generate Your Personalized Plan</span>
               )}
             </button>
           </div>
