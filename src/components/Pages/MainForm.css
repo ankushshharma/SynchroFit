@@ -1,0 +1,111 @@
+.form-container {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Form sections */
+.form-section {
+  background-color: var(--form-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Form inputs */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  background-color: var(--input-background) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Form labels */
+.form-container label {
+  color: var(--text-color) !important;
+}
+
+/* Form headings */
+.form-container h1,
+.form-container h2 {
+  color: var(--text-color) !important;
+}
+
+/* Form text */
+.form-container p,
+.form-container span {
+  color: var(--text-color) !important;
+}
+
+/* Range input styling */
+.form-container input[type="range"] {
+  background-color: var(--border-color) !important;
+}
+
+/* Radio buttons */
+.form-container input[type="radio"] {
+  border-color: var(--text-color) !important;
+}
+
+/* Options in select */
+.form-container select option {
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+/* Days counter badge */
+.days-badge {
+    background-color: var(--input-background) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 4px 12px !important;
+    border-radius: 9999px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+} 
+
+/* Add these animations to your existing CSS */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.5;
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+/* Add these to your existing form-section styles */
+.form-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure smooth transitions */
+.form-section * {
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}

@@ -1,0 +1,44 @@
+.navbar {
+    background-color: var(--nav-background) !important;
+    transition: background-color 0.3s ease;
+    height: 64px !important;
+}
+
+.navbar .MuiToolbar-root {
+    min-height: 64px !important;
+    padding: 0 16px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-icon {
+    color: var(--text-color) !important;
+    padding: 8px !important;
+}
+
+.navbar-title {
+    color: var(--text-color) !important;
+    margin: 0 auto !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+.navbar-icon:first-child {
+    margin-right: auto;
+}
+
+.navbar-icon:last-of-type {
+    margin-left: auto;
+}
+
+.navbar-menu .MuiMenuItem-root {
+    color: var(--text-color);
+    background-color: var(--nav-background);
+}
+
+.navbar-menu .MuiPaper-root {
+    background-color: var(--nav-background);
+    color: var(--text-color);
+}

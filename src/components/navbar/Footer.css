@@ -1,0 +1,44 @@
+.footer {
+    background-color: white;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease;
+    padding: -5px; /* Decreased padding to reduce height */
+    text-align: center; /* Centered text */
+    position: fixed; /* Fix the footer to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Fix to the bottom */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Shadow at the top */
+    height: 30px;
+    z-index: 1000; /* Ensure footer is above other content */
+}
+
+.footer-content {
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center the content */
+    width: 100%; /* Expand to full width */
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full height of footer */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    display: inline; /* Display links inline */
+    margin: 0 15px; /* Spacing between links */
+}
+
+.footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
